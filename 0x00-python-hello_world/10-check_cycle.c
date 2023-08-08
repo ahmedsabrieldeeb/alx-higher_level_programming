@@ -16,7 +16,7 @@ int check_cycle(listint_t *list)
 	t = list;
 	h = list;
 
-	while (h != NULL)
+	while (h != NULL && h->next != NULL)
 	{
 		t = t->next;
 		h = h->next->next;
