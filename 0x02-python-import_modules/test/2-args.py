@@ -6,6 +6,6 @@ if __name__ == "__main__":
     if (len_arg_list == 1):
         print("0 arguments.")
     else:
-        print("{} arguments:".format(len_arg_list))
+        print("{} arguments:".format(len_arg_list - 1))
         for i in range(1, len_arg_list):
             print("{}: {}".format(i, arg_list[i]))
