@@ -7,3 +7,6 @@ def common_elements(set_1, set_2):
             if (i == j):
                 new_set.append(i)
     return set(new_set)
+
+    ## another method
+    # return set_1 & set_2
