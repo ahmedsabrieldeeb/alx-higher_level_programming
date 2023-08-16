@@ -37,7 +37,7 @@ def roman_to_int(roman_string):
 
     res = 0  # initial value for returned value
 
-    if roman_string:
+    if type(roman_string) == str:
         # scanned windows
         temp_str = roman_string[0:4]
 
