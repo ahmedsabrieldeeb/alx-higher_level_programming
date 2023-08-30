@@ -51,6 +51,10 @@ class Square:
             self: argument referring to object calling the method.
             value (int): value to which the __size is set
         """
+        if (self.__size == 0):
+            print()
+            return
+
         for i in range(self.__size):
             for j in range(self.__size):
                 print("#", end='')
