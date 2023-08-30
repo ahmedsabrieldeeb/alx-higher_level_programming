@@ -10,7 +10,8 @@ class Square:
         Args:
             self: argument referring to object calling the method.
             size (int): size of square to be set initializingly.
-            position (tuple): tuple of two intergers as coordinated to print the square with
+            position (tuple): tuple of two intergers as coordinated
+            to print the square with
         """
         self.size = size
         self.position = position
@@ -23,7 +24,7 @@ class Square:
             self: argument referring to object calling the method.
         """
         return self.__size
-    
+
     @property
     def position(self):
         """
@@ -54,11 +55,12 @@ class Square:
             self: argument referring to object calling the method.
             value (int): value to which the __size is set
         """
-        if (not isinstance(value, tuple) or
-            not isinstance(value[0], int) or
-            not isinstance(value[0], int) or
-            value[0] < 0 or value[1] < 0):
-
+        if (
+            not isinstance(value, tuple)
+            or not isinstance(value[0], int)
+            or not isinstance(value[1], int)
+            or value[0] < 0 or value[1] < 0
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -87,7 +89,7 @@ class Square:
 
         for rows in range(self.__size):
             for xs in range(self.__position[0]):
-                print(" ",end='')
+                print(" ", end='')
             for cols in range(self.__size):
                 print("#", end='')
             print()
