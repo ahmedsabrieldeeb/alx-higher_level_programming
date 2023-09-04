@@ -20,10 +20,10 @@ def add_integer(a, b=89):
 
     Raises:
         TypeError: a must be integer
-        TypeError: a must be integers
+        TypeError: b must be integer
 
     Notes:
-        Cadting both a and b is happened first
+        Casting both a and b is happened first
     """
 
     if not isinstance(a, int) and not isinstance(a, float):
