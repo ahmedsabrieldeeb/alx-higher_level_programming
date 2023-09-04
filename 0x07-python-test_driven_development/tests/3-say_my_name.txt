@@ -1,0 +1,35 @@
+' Test file for modeule "3-say_my_name.py" '
+
+Importing:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Contens:
+- functions:
+    1. say_my_name (a function to print: My name is <first name> <last name>)
+
+Usages:
+- functions:
+1. say_my_name(first_name, last_name="")
+
+Tests:
+1. Names:
+-----------
+
+    >>> say_my_name('Ahmed', 'Eldeeb')
+    My name is Ahmed Eldeeb
+
+    >>> say_my_name('Omar')
+    My name is Omar 
+
+2. Errors:
+----------
+
+    >>> say_my_name(56)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name('ahmed', 65)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
