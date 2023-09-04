@@ -34,7 +34,7 @@ class Rectangle:
                 row_str = row_str + '#'
             row_str = row_str + '\n'
 
-        return row_str
+        return row_str[:-1]
 
     @property
     def width(self):
