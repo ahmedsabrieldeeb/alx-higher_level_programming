@@ -62,16 +62,16 @@ def main():
 
     if (len(sys.argv) != 2):
         print("Usage: nqueens N")
-        exit(1)
+        sys.exit(1)
 
     n = int(sys.argv[1])
     if not isinstance(n, int):
         print("N must be a number")
-        exit(1)
+        sys.exit(1)
 
     if n < 4:
         print("N must be at least 4")
-        exit(1)
+        sys.exit(1)
 
     board = [[0 for i in range(n)]
              for j in range(n)]
