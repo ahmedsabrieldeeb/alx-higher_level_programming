@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+A module to solve the N queens challenge
+"""
 
 result = []
 
