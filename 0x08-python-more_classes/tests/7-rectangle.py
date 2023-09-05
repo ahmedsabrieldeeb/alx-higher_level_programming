@@ -12,7 +12,8 @@ class Rectangle:
     Attributes:
         width (int): the width of rectangle
         height (int): the height of rectangle
-        number_of_instances: the number of instances created from class
+        number_of_instances (int): the number of instances created from class
+        print_symbol (str): a symbol to print the shape with
     """
 
     number_of_instances = 0
