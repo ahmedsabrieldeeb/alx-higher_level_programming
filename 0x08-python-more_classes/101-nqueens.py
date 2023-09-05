@@ -36,9 +36,6 @@ def isvalid(board, row, col):
 def solve(board, col):
     # base case
     if (col == len(board)):  # column exceeding the board, so let's stop
-        for row in board:
-            print(row)
-        print("================")
         path = []  # store the taken path
         for row in range(len(board)):
             for col in range(len(board[row])):
