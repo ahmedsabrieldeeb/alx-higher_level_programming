@@ -3,6 +3,7 @@
 Module of first task
 """
 
+
 def read_file(filename=""):
     """
     Read a file in python
