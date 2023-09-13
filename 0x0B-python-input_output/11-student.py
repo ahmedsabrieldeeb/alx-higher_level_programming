@@ -47,5 +47,5 @@ class Student:
         Args:
             json (dict): a dictionary of information
         """
-        for key in json:
-            self.key = json[key]
+        for key, value in json.items():
+            setattr(self, key, value)
