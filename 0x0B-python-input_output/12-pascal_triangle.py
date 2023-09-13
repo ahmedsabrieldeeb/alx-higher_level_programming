@@ -3,6 +3,7 @@
 Interview Question
 """
 
+
 def pascal_triangle(n):
     """
     Returning a list of lists of integers representing
@@ -10,7 +11,7 @@ def pascal_triangle(n):
 
     Args:
         n (int): triangle depth
-    
+
     Returns:
         list: nested list representing the pascal triangle
     """
@@ -28,7 +29,7 @@ def pascal_triangle(n):
 
             try:
                 right_side = pascal[row-1][element]
-            except:
+            except IndexError:
                 right_side = 0
 
             if (left_side == right_side == 0):
@@ -38,5 +39,5 @@ def pascal_triangle(n):
 
             row_list.append(sum)
         pascal.append(row_list)
-    
+
     return (pascal)
