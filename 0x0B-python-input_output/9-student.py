@@ -28,7 +28,7 @@ class Student:
         for JSON serialization of an object
 
         Args:
-            obj: python object
+            self: instance object
 
         Returns:
             corresponding object __dict__ attribute
