@@ -32,10 +32,8 @@ class Student:
         Returns:
             corresponding object __dict__ attribute
         """
-        my_dict = self.__dict__
-        if not attrs:
-            return (my_dict)
 
-        my_dict = dict([(key, my_dict[key]) for key in attrs
-                        if key in list(my_dict)])
-        return (my_dict)
+        if not attrs:
+            return (self.__dict__)
+    
+        return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
