@@ -33,7 +33,14 @@ class Student:
             corresponding object __dict__ attribute
         """
 
-        if not attrs:
-            return (self.__dict__)
+        if attrs == None:
+            return self.__dict__
+        
+        if type(attrs) != list:
+            return self.__dict__
+    
+        for element in attrs:
+            if (type(element) != str):
+                return self.__dict__
     
         return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
