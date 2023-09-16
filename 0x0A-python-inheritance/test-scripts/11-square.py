@@ -39,4 +39,4 @@ class Square(Rectangle):
         Returns:
             str: text to be used as represnting the object (not __repr__)
         """
-        return f"[ٍSquare] {self.__size}/{self.__size}"
+        return f"[Square] {self.__size}/{self.__size}"
