@@ -15,7 +15,7 @@ class Square(Rectangle):
 
         Args:
 
-            size (int): length 
+            size (int): length
         """
 
         super().integer_validator("size", size)
