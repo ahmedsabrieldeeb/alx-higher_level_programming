@@ -67,3 +67,18 @@ Tests:
 
     >>> print(mylist_3)
     [0, 0, 10, 1, 0]
+
+
+
+
+
+    >>> mylist_3 = MyList()
+
+    >>> print(mylist_3)
+    []
+    
+    >>> mylist_3.print_sorted()
+    []
+
+    >>> print(mylist_3)
+    []
