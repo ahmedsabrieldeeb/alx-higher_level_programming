@@ -1,0 +1,75 @@
+' Test file for modeule "7-base_geometry.py" '
+
+Importing:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Contens:
+- classes:
+    1. BaseGeometry(): A class that checks for values passed
+    - functions:
+        1. area(): An empty function
+        2. integer_validator(): checks for validity of value passed
+
+Usages:
+- classes:
+    1. BaseGeometry()
+    - functions:
+        1. area()
+        2. integer_validator(name, value):
+            name: must be string (will not check for it)
+            value: must be int (will check for it)
+
+            Raises:
+                TypeError: when value is not an integer
+                ValueError: when value is not greater than zero
+
+Tests:
+1. TypeError:
+--------------------
+    >>> bg_1 = BaseGeometry()
+    >>> bg_1.integer_validator("ahmed", 25)
+    >>> bg_1.integer_validator("ahmed", 100)
+
+    >>> bg_1.integer_validator("ahmed", "ahmed")
+    Traceback (most recent call last):
+    ...
+    TypeError: ahmed must be an integer
+
+    >>> bg_1.integer_validator("name", 3.6)
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+    >>> bg_1.integer_validator("hello", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: hello must be an integer
+
+    >>> bg_1.integer_validator("age", [15, 20])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> bg_1.integer_validator("dict", {'a':5, 'b':6})
+    Traceback (most recent call last):
+    ...
+    TypeError: dict must be an integer
+
+
+1. ValueError:
+-------------------------
+    >>> bg_2 = BaseGeometry()
+    >>> bg_2.integer_validator("ahmed", 36)
+    >>> bg_2.integer_validator("ahmed", 22)
+
+    >>> bg_1.integer_validator("hello", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: hello must be greater than 0
+
+    >>> bg_1.integer_validator("name", -10)
+    Traceback (most recent call last):
+    ...
+    ValueError: name must be greater than 0
+
+    >>> bg_1.integer_validator("name", 10)

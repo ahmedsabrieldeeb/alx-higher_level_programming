@@ -1,0 +1,69 @@
+' Test file for modeule "1-my_list.py" '
+
+Importing:
+>>> MyList = __import__('1-my_list').MyList
+
+Contens:
+- classes:
+    1. MyList(): A class that inherits from list with sorting method added
+
+Usages:
+- classes:
+    1. MyList()
+
+Tests:
+1. Lists:
+-----------
+
+    >>> mylist_1 = MyList()
+    >>> mylist_1.append(2)
+    >>> mylist_1.append(3)
+    >>> mylist_1.append(1)
+    >>> mylist_1.append(10)
+    >>> mylist_1.append(5)
+
+    >>> print(mylist_1)
+    [2, 3, 1, 10, 5]
+    
+    >>> mylist_1.print_sorted()
+    [1, 2, 3, 5, 10]
+
+    >>> print(mylist_1)
+    [2, 3, 1, 10, 5]
+
+
+
+    >>> mylist_2 = MyList()
+    >>> mylist_2.append(-2)
+    >>> mylist_2.append(-10)
+    >>> mylist_2.append(-3)
+    >>> mylist_2.append(10)
+    >>> mylist_2.append(0)
+
+    >>> print(mylist_2)
+    [-2, -10, -3, 10, 0]
+    
+    >>> mylist_2.print_sorted()
+    [-10, -3, -2, 0, 10]
+
+    >>> print(mylist_2)
+    [-2, -10, -3, 10, 0]
+
+
+
+
+    >>> mylist_3 = MyList()
+    >>> mylist_3.append(0)
+    >>> mylist_3.append(0)
+    >>> mylist_3.append(10)
+    >>> mylist_3.append(1)
+    >>> mylist_3.append(0)
+
+    >>> print(mylist_3)
+    [0, 0, 10, 1, 0]
+    
+    >>> mylist_3.print_sorted()
+    [0, 0, 0, 1, 10]
+
+    >>> print(mylist_3)
+    [0, 0, 10, 1, 0]
