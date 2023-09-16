@@ -15,6 +15,9 @@ Usages:
     1. BaseGeometry()
     - functions:
         1. area()
+            Raises:
+                Exception: area isn't implemented
+
         2. integer_validator(name, value):
             name: must be string (will not check for it)
             value: must be int (will check for it)
@@ -24,7 +27,16 @@ Usages:
                 ValueError: when value is not greater than zero
 
 Tests:
-1. TypeError:
+1. Exception:
+-------------
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+
+2. TypeError:
 --------------------
     >>> bg_1 = BaseGeometry()
     >>> bg_1.integer_validator("ahmed", 25)
@@ -55,8 +67,37 @@ Tests:
     ...
     TypeError: dict must be an integer
 
+    >>> bg_1.integer_validator("set", {5, 6})
+    Traceback (most recent call last):
+    ...
+    TypeError: set must be an integer
 
-1. ValueError:
+    >>> bg_1.integer_validator("None", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: None must be an integer
+
+    >>> bg_1.integer_validator("tuple", (15, ))
+    Traceback (most recent call last):
+    ...
+    TypeError: tuple must be an integer
+
+    >>> bg_1.integer_validator("set", {5, 6})
+    Traceback (most recent call last):
+    ...
+    TypeError: set must be an integer
+
+    >>> bg_1.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> bg_1.integer_validator("age")
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+    
+3. ValueError:
 -------------------------
     >>> bg_2 = BaseGeometry()
     >>> bg_2.integer_validator("ahmed", 36)
@@ -72,4 +113,3 @@ Tests:
     ...
     ValueError: name must be greater than 0
 
-    >>> bg_1.integer_validator("name", 10)
