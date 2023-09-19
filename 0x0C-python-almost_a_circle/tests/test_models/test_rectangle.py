@@ -14,7 +14,6 @@ class TestRectangle(unittest.TestCase):
         """cleaning up before each test case utilizing name mangling"""
         Base._Base__nb_objects = 0
 
-
     def test_init_default(self):
         """Test passing default number of args"""
         rect = Rectangle(10, 5)
@@ -91,7 +90,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(0, 6)
 
-
     def test_height_type(self):
         with self.assertRaises(TypeError):
             Rectangle(6, "5")
@@ -118,8 +116,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(6, 0)
 
-
-
     def test_x_type(self):
         with self.assertRaises(TypeError):
             Rectangle(6, 6, "5")
@@ -143,8 +139,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(6, 6, -6)
 
-
-
     def test_y_type(self):
         with self.assertRaises(TypeError):
             Rectangle(6, 6, 6, "5")
@@ -167,6 +161,7 @@ class TestRectangle(unittest.TestCase):
     def test_y_value(self):
         with self.assertRaises(ValueError):
             Rectangle(6, 6, 0, -3)
+
 
 if __name__ == '__main__':
     unittest.main()

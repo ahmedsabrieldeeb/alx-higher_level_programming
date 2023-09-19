@@ -33,10 +33,10 @@ class Rectangle(Base):
     def width(self, value):
         """
         Set width of Rectangle object
-        
+
         Args:
             value (int): value set to width
-        
+
         Raises:
             TypeError: width must be an int
             ValueError: width must be > 0
@@ -58,10 +58,10 @@ class Rectangle(Base):
     def height(self, value):
         """
         Set height of Rectangle object
-        
+
         Args:
             value (int): value set to height
-        
+
         Raises:
             TypeError: height must be an int
             ValueError: height must be > 0
@@ -83,10 +83,10 @@ class Rectangle(Base):
     def x(self, value):
         """
         Set x-coordinate of Rectangle object
-        
+
         Args:
             value (int): value set to x-coordinate
-        
+
         Raises:
             TypeError: x must be an int
             ValueError: x must be >= 0
@@ -108,10 +108,10 @@ class Rectangle(Base):
     def y(self, value):
         """
         Set y-coordinate of Rectangle object
-        
+
         Args:
             value (int): value set to y-coordinate
-        
+
         Raises:
             TypeError: y must be an int
             ValueError: y must be >= 0
