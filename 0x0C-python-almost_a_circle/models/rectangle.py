@@ -67,7 +67,7 @@ class Rectangle(Base):
             ValueError: height must be > 0
         """
         if (type(value) is not int):
-            raise TypeError("height must be an int")
+            raise TypeError("height must be an integer")
 
         if (value <= 0):
             raise ValueError("height must be > 0")
@@ -76,7 +76,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Get x of Rectangle bject"""
+        """Get x of Rectangle object"""
         return self.__x
 
     @x.setter
@@ -92,7 +92,7 @@ class Rectangle(Base):
             ValueError: x must be >= 0
         """
         if (type(value) is not int):
-            raise TypeError("x must be an int")
+            raise TypeError("x must be an integer")
 
         if (value < 0):
             raise ValueError("x must be >= 0")
@@ -101,7 +101,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Get y of Rectangle bject"""
+        """Get y of Rectangle object"""
         return self.__y
 
     @y.setter
@@ -117,7 +117,7 @@ class Rectangle(Base):
             ValueError: y must be >= 0
         """
         if (type(value) is not int):
-            raise TypeError("y must be an int")
+            raise TypeError("y must be an integer")
 
         if (value < 0):
             raise ValueError("y must be >= 0")
