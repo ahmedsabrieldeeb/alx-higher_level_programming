@@ -24,6 +24,12 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        """overwrite __str__ method to print custom output"""
+        return f"""
+[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}
+"""
+
     @property
     def width(self):
         """Get width of Rectangle bject"""
