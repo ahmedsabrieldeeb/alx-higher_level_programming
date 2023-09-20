@@ -127,3 +127,10 @@ class Rectangle(Base):
     def area(self):
         """Returning rectangle area"""
         return self.__height * self.__width
+
+    def display(self):
+        """Printing the Rectangle with # symbols"""
+        for rows in range(self.__height):
+            for cols in range(self.__width):
+                print("#", end='')
+            print()
