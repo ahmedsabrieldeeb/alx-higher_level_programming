@@ -192,7 +192,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_magic_str(self):
         rect = Rectangle(10, 3)
-        expexted_out = "\n[Rectangle] (1) 0/0 - 10/3\n"
+        expexted_out = "[Rectangle] (1) 0/0 - 10/3"
         self.assertEqual(str(expexted_out), expexted_out)
 
         with StringIO() as temp_out:
@@ -201,7 +201,7 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(temp_out.getvalue(), expexted_out + '\n')
 
         rect = Rectangle(3, 4, 5, 6)
-        expexted_out = "\n[Rectangle] (2) 5/6 - 3/4\n"
+        expexted_out = "[Rectangle] (2) 5/6 - 3/4"
         self.assertEqual(str(expexted_out), expexted_out)
 
         with StringIO() as temp_out:
@@ -210,7 +210,7 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(temp_out.getvalue(), expexted_out + '\n')
 
         rect = Rectangle(1, 1, 3, 0, 15)
-        expexted_out = "\n[Rectangle] (15) 3/0 - 1/1\n"
+        expexted_out = "[Rectangle] (15) 3/0 - 1/1"
         self.assertEqual(str(expexted_out), expexted_out)
 
         with StringIO() as temp_out:
@@ -219,7 +219,7 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(temp_out.getvalue(), expexted_out + '\n')
 
         rect = Rectangle(10, 3)
-        expexted_out = "\n[Rectangle] (3) 0/0 - 10/3\n"
+        expexted_out = "[Rectangle] (3) 0/0 - 10/3"
         self.assertEqual(str(expexted_out), expexted_out)
 
         with StringIO() as temp_out:
