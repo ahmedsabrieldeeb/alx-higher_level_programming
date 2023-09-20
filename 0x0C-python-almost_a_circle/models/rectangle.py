@@ -160,7 +160,7 @@ class Rectangle(Base):
             3rd argument should be the height attribute
             4th argument should be the x attribute
             5th argument should be the y attribute
-        
+
         Notes on kwargs:
             **kwargs must be skipped if *args exists and is not empty
             Each key in this dictionary represents an attribute to the instance
