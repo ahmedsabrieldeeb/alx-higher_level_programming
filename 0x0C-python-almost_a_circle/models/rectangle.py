@@ -138,7 +138,7 @@ class Rectangle(Base):
         """Printing the Rectangle with # symbols"""
         for ys in range(self.__y):
             print()
-        
+
         for rows in range(self.__height):
             for xs in range(self.__x):
                 print(' ', end='')
