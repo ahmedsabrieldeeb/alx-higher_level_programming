@@ -146,19 +146,28 @@ class Rectangle(Base):
                 print("#", end='')
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         update attributes of the object
 
         Args:
             args (list): variable non-keyworded list of args
+            kwargs (dict): varibale keyworded dictionary of args
 
-        Notes:
+        Notes on args:
             1st argument should be the id attribute
             2nd argument should be the width attribute
             3rd argument should be the height attribute
             4th argument should be the x attribute
             5th argument should be the y attribute
+        
+        Notes on kwargs:
+            **kwargs must be skipped if *args exists and is not empty
+            Each key in this dictionary represents an attribute to the instance
         """
-        for idx in range(len(args)):
-            setattr(self, list(self.__dict__)[idx], args[idx])
+        if args:
+            for idx in range(len(args)):
+                setattr(self, list(self.__dict__)[idx], args[idx])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)

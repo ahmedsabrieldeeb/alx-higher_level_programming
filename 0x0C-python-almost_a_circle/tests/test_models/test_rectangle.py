@@ -248,7 +248,7 @@ class TestRectangle(unittest.TestCase):
             print(rect)
             self.assertEqual(temp_out.getvalue(), expexted_out + '\n')
 
-    def test_update(self):
+    def test_update_args(self):
         rect = Rectangle(10, 10, 10, 10)
 
         rect.update(6, 2, 3, 4, 5)
@@ -264,6 +264,33 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.height, 3)
         self.assertEqual(rect.x, 4)
         self.assertEqual(rect.y, 5)
+
+    def test_update_kwargs(self):
+        rect = Rectangle(10, 10)
+
+        rect.update(id=15)
+        self.assertEqual(rect.id, 15)
+
+        rect.update(width=300)
+        self.assertEqual(rect.width, 300)
+        
+        rect.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(rect.x, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.y, 3)
+        self.assertEqual(rect.width, 4)
+
+    def test_update_args_kwargs(self):
+        rect = Rectangle(10, 10)
+
+        rect.update(10, 20, 30, id=1, width=2, height=3)
+        self.assertEqual(rect.id, 10)
+        self.assertEqual(rect.width, 20)
+        self.assertEqual(rect.height, 30)
+
+        rect.update(14, x=20)
+        self.assertEqual(rect.id, 14)
+        self.assertEqual(rect.x, 0)
 
 if __name__ == '__main__':
     unittest.main()
