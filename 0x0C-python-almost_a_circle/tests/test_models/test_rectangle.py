@@ -248,6 +248,22 @@ class TestRectangle(unittest.TestCase):
             print(rect)
             self.assertEqual(temp_out.getvalue(), expexted_out + '\n')
 
+    def test_update(self):
+        rect = Rectangle(10, 10, 10, 10)
+
+        rect.update(6, 2, 3, 4, 5)
+        self.assertEqual(rect.id, 6)
+        self.assertEqual(rect.width, 2)
+        self.assertEqual(rect.height, 3)
+        self.assertEqual(rect.x, 4)
+        self.assertEqual(rect.y, 5)
+
+        rect.update(10, 10)
+        self.assertEqual(rect.id, 10)
+        self.assertEqual(rect.width, 10)
+        self.assertEqual(rect.height, 3)
+        self.assertEqual(rect.x, 4)
+        self.assertEqual(rect.y, 5)
 
 if __name__ == '__main__':
     unittest.main()

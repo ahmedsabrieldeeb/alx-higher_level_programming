@@ -145,3 +145,20 @@ class Rectangle(Base):
             for cols in range(self.__width):
                 print("#", end='')
             print()
+
+    def update(self, *args):
+        """
+        update attributes of the object
+
+        Args:
+            args (list): variable non-keyworded list of args
+        
+        Notes:
+            1st argument should be the id attribute
+            2nd argument should be the width attribute
+            3rd argument should be the height attribute
+            4th argument should be the x attribute
+            5th argument should be the y attribute
+        """
+        for idx in range(len(args)):
+            setattr(self, list(self.__dict__)[idx], args[idx])
