@@ -152,7 +152,7 @@ class Rectangle(Base):
 
         Args:
             args (list): variable non-keyworded list of args
-        
+
         Notes:
             1st argument should be the id attribute
             2nd argument should be the width attribute
