@@ -174,7 +174,7 @@ class TestRectangle(unittest.TestCase):
         rect = Rectangle(5, 9)
         self.assertEqual(rect.area(), 45)
 
-    def test_display_4x6(self):
+    def test_display_without_positions(self):
         rect = Rectangle(4, 6)
         expected_out = "####\n####\n####\n####\n####\n####\n"
         with StringIO() as temp_out:
@@ -182,9 +182,30 @@ class TestRectangle(unittest.TestCase):
             rect.display()
             self.assertEqual(temp_out.getvalue(), expected_out)
 
-    def test_display_3x3(self):
         rect = Rectangle(3, 3)
         expected_out = "###\n###\n###\n"
+        with StringIO() as temp_out:
+            sys.stdout = temp_out
+            rect.display()
+            self.assertEqual(temp_out.getvalue(), expected_out)
+
+    def test_display_with_positions(self):
+        rect = Rectangle(2, 2, 2, 2)
+        expected_out = "\n\n  ##\n  ##\n"
+        with StringIO() as temp_out:
+            sys.stdout = temp_out
+            rect.display()
+            self.assertEqual(temp_out.getvalue(), expected_out)
+
+        rect = Rectangle(2, 3, 1, 0)
+        expected_out = " ##\n ##\n ##\n"
+        with StringIO() as temp_out:
+            sys.stdout = temp_out
+            rect.display()
+            self.assertEqual(temp_out.getvalue(), expected_out)
+
+        rect = Rectangle(2, 3, 0, 1)
+        expected_out = "\n##\n##\n##\n"
         with StringIO() as temp_out:
             sys.stdout = temp_out
             rect.display()
