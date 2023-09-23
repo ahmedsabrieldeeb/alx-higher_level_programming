@@ -167,7 +167,25 @@ class Rectangle(Base):
         """
         if args:
             for idx in range(len(args)):
-                setattr(self, list(self.__dict__)[idx], args[idx])
+                if (idx == 0):
+                    self.id = args[idx]
+                elif (idx == 1):
+                    self.width = args[idx]
+                elif (idx == 2):
+                    self.height = args[idx]
+                elif (idx == 3):
+                    self.x = args[idx]
+                elif (idx == 4):
+                    self.y = args[idx]
         else:
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                if (key == 'id'):
+                    self.id = value
+                elif (key == 'width'):
+                    self.width = value
+                elif (key == 'height'):
+                    self.height = value
+                elif (key == 'x'):
+                    self.x = value
+                elif (key == 'y'):
+                    self.y = value

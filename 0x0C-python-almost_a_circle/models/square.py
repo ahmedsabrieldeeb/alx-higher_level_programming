@@ -34,3 +34,34 @@ class Square(Rectangle):
         """Set value to square size"""
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """
+        update attributes of the object
+
+        Args:
+            args (list): variable non-keyworded list of args
+            kwargs (dict): varibale keyworded dictionary of args
+
+        Notes on args:
+            1st argument should be the id attribute
+            2nd argument should be the size attribute
+            3th argument should be the x attribute
+            4th argument should be the y attribute
+
+        Notes on kwargs:
+            **kwargs must be skipped if *args exists and is not empty
+            Each key in this dictionary represents an attribute to the instance
+        """
+        if args:
+            if len(args) >= 2:
+                self.size = args[1]
+                modified_args = tuple([args[0], args[1], *args[1:]])
+                super().update(*modified_args)
+            else:
+                super().update(*args)
+        else:
+            if 'size' in kwargs:
+                self.size = kwargs['size']
+                kwargs.pop('size')
+            super().update(**kwargs)

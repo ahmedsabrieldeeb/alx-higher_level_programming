@@ -265,6 +265,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 4)
         self.assertEqual(rect.y, 5)
 
+        with self.assertRaises(TypeError):
+            rect.update(1, 'ahmed')
+
+        with self.assertRaises(ValueError):
+            rect.update(1, 5, -9)
+
     def test_update_kwargs(self):
         rect = Rectangle(10, 10)
 
