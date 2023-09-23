@@ -68,6 +68,18 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             Square(0)
 
+
+    def test_magic_str(self):
+        square = Square(5)
+        expexted_out = '[Square] (1) 0/0 - 5'
+        result = str(square)
+        self.assertEqual(result, expexted_out)
+
+        with StringIO() as temp_out:
+            sys.stdout = temp_out
+            print(square)
+            self.assertEqual(temp_out.getvalue(), expexted_out + '\n')
+
     def test_set_size(self):
         sqaure = Square(15, 14, 2, 3)
         self.assertEqual(sqaure.size, 15)
