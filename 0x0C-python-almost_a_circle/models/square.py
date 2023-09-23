@@ -60,4 +60,4 @@ class Square(Rectangle):
             **kwargs must be skipped if *args exists and is not empty
             Each key in this dictionary represents an attribute to the instance
         """
-        
+        pass
