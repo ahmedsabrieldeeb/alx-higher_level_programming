@@ -46,6 +46,27 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.y, 5)
         self.assertEqual(square.id, 3)
 
+    def test_init_wrong(self):
+        with self.assertRaises(TypeError):
+            Square("1")
+        
+        with self.assertRaises(TypeError):
+            Square(2, "1")
+
+        with self.assertRaises(TypeError):
+            Square(5, 6, "1")
+
+        with self.assertRaises(ValueError):
+            Square(1, -1)
+
+        with self.assertRaises(ValueError):
+            Square(5, 6, -1)
+
+        with self.assertRaises(ValueError):
+            Square(-1)
+
+        with self.assertRaises(ValueError):
+            Square(0)
 
     def test_set_size(self):
         sqaure = Square(15, 14, 2, 3)
