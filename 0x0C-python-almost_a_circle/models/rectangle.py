@@ -165,27 +165,19 @@ class Rectangle(Base):
             **kwargs must be skipped if *args exists and is not empty
             Each key in this dictionary represents an attribute to the instance
         """
+        attribute_mapping = {
+            'id':     'self.id=',
+            'width':  'self.width=',
+            'height': 'self.height=',
+            'x':      'self.x=',
+            'y':      'self.y='
+        }
+
         if args:
-            for idx in range(len(args)):
-                if (idx == 0):
-                    self.id = args[idx]
-                elif (idx == 1):
-                    self.width = args[idx]
-                elif (idx == 2):
-                    self.height = args[idx]
-                elif (idx == 3):
-                    self.x = args[idx]
-                elif (idx == 4):
-                    self.y = args[idx]
+            for idx, arg in enumerate(args):
+                attribute_name = list(attribute_mapping.keys())[idx]
+                exec(attribute_mapping[attribute_name] + str('arg'))
         else:
             for key, value in kwargs.items():
-                if (key == 'id'):
-                    self.id = value
-                elif (key == 'width'):
-                    self.width = value
-                elif (key == 'height'):
-                    self.height = value
-                elif (key == 'x'):
-                    self.x = value
-                elif (key == 'y'):
-                    self.y = value
+                if key in attribute_mapping:
+                    exec(attribute_mapping[key] + str('value'))
