@@ -47,6 +47,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.y, 5)
         self.assertEqual(square.id, 3)
 
+
     def test_set_size(self):
         sqaure = Square(15, 14, 2, 3)
         self.assertEqual(sqaure.size, 15)
