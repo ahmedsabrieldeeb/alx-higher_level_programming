@@ -28,7 +28,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """Get size of square object"""
-        return self.__width
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -38,11 +38,26 @@ class Square(Rectangle):
         Args:
             value (int): value to be assigned
         """
-        if (type(value) is not int):
-            raise TypeError("width must be an integer")
+        self.width = value
+        self.__size = value
 
-        if (value <= 0):
-            raise ValueError("width must be > 0")
+    def update(self, *args, **kwargs):
+        """
+        update attributes of the object
 
-        self.__width = value
-        self.__height = value
+        Args:
+            args (list): variable non-keyworded list of args
+            kwargs (dict): varibale keyworded dictionary of args
+
+        Notes on args:
+            1st argument should be the id attribute
+            2nd argument should be the width attribute
+            3rd argument should be the height attribute
+            4th argument should be the x attribute
+            5th argument should be the y attribute
+
+        Notes on kwargs:
+            **kwargs must be skipped if *args exists and is not empty
+            Each key in this dictionary represents an attribute to the instance
+        """
+        
