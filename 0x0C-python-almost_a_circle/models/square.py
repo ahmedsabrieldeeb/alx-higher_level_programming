@@ -3,6 +3,7 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Square class inheriting from Rectangle class"""
 
@@ -20,5 +21,6 @@ class Square(Rectangle):
     def __str__(self):
         """overwrite __str__ method to print custom output"""
         return f"""\
-[Square] ({self.id}) {self._Rectangle__x}/{self._Rectangle__y} - {self._Rectangle__width}\
+[Square] ({self.id}) {self._Rectangle__x}/{self._Rectangle__y} -\
+{self._Rectangle__width}\
 """
