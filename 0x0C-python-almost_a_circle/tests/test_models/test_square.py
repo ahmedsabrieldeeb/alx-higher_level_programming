@@ -47,6 +47,28 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.y, 5)
         self.assertEqual(square.id, 3)
 
+    def test_size_type(self):
+        sqaure = Square(15)
+        self.assertEqual(sqaure.size, 15)
+
+        with self.assertRaises(TypeError):
+            sqaure.size = "ahmed"
+        
+        sqaure.size = 10
+        self.assertEqual(sqaure.size, 10)
+
+        with self.assertRaises(TypeError):
+            sqaure.size = [15, 6]
+
+        with self.assertRaises(TypeError):
+            sqaure.size = (14, )
+
+        with self.assertRaises(TypeError):
+            sqaure.size = {14, 6}
+
+        with self.assertRaises(TypeError):
+            sqaure.size = {'ahmed':15}
+
 
 if __name__ == '__main__':
     unittest.main()
