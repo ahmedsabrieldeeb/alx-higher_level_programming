@@ -65,7 +65,7 @@ class Base():
             json_string: a string coming from JSON
 
         Returns:
-            the original obejct
+            the original object
 
         Notes:
             If json_string is None or empty, return an empty list
@@ -94,3 +94,20 @@ class Base():
 
         dummy_obj.update(**dictionary)
         return (dummy_obj)
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Load a list of objects from a file
+
+        Returns:
+            list: a list of objects
+        """
+        with open(f"{cls.__name__}.json", "r", encoding='utf-8') as f:
+            json_string = json.load(f)
+            output_list = []
+
+            for obj_dict in list(json_string):
+                output_list.append(cls.create(**dict(obj_dict)))
+
+            return (output_list)
