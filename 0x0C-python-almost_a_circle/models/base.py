@@ -103,12 +103,15 @@ class Base():
         Returns:
             list: a list of objects
         """
-        with open(f"{cls.__name__}.json", "r", encoding='utf-8') as f:
-            json_str = f.read()
-            obj_list = cls.from_json_string(json_str)
+        try:
+            with open(f"{cls.__name__}.json", "r", encoding='utf-8') as f:
+                json_str = f.read()
+                obj_list = cls.from_json_string(json_str)
 
-            output_list = []
-            for obj_dict in obj_list:
-                output_list.append(cls.create(**dict(obj_dict)))
+                output_list = []
+                for obj_dict in obj_list:
+                    output_list.append(cls.create(**dict(obj_dict)))
 
-            return (output_list)
+                return (output_list)
+        except FileNotFoundError:
+            return ([])
