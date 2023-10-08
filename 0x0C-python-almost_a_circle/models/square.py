@@ -65,3 +65,12 @@ class Square(Rectangle):
                 self.size = kwargs['size']
                 kwargs.pop('size')
             super().update(**kwargs)
+
+    def to_dictionary(self):
+        """Returning dictionary representation of the object"""
+        return {
+            'id':     self.id,
+           'size':   self.size,
+            'x':      self.x,
+            'y':      self.y
+        }
