@@ -181,3 +181,13 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if key in attribute_mapping:
                     exec(attribute_mapping[key] + str('value'))
+
+    def to_dictionary(self):
+        """Returning dictionary representation of the object"""
+        return {
+            'id':     self.id,
+            'width':  self.width,
+            'height': self.height,
+            'x':      self.x,
+            'y':      self.y
+        }
