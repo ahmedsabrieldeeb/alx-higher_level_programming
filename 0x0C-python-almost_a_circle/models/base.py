@@ -104,10 +104,11 @@ class Base():
             list: a list of objects
         """
         with open(f"{cls.__name__}.json", "r", encoding='utf-8') as f:
-            json_string = json.load(f)
-            output_list = []
+            json_str = f.read()
+            obj_list = cls.from_json_string(json_str)
 
-            for obj_dict in list(json_string):
+            output_list = []
+            for obj_dict in obj_list:
                 output_list.append(cls.create(**dict(obj_dict)))
 
             return (output_list)
