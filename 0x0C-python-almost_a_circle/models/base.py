@@ -34,6 +34,21 @@ class Base():
             str: json string representation of a list of dictionaries
         """
         if (list_dictionaries):
-            return json.dumps(list_dictionaries)
+            return (json.dumps(list_dictionaries))
         else:
             return ("[]")
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        Save a list of objects to a file
+
+        Args:
+            list_objs (list): list of objects
+        """
+        with open(f"{cls.__name__}.json", "w") as f:
+            list_to_objs = []
+            for obj in list_objs:
+                list_to_objs.append(obj.to_dictionary())
+
+            f.write(str(cls.to_json_string(list_to_objs)))
