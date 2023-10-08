@@ -46,9 +46,12 @@ class Base():
         Args:
             list_objs (list): list of objects
         """
-        with open(f"{cls.__name__}.json", "w") as f:
-            list_to_objs = []
-            for obj in list_objs:
-                list_to_objs.append(obj.to_dictionary())
 
-            f.write(str(cls.to_json_string(list_to_objs)))
+        with open(f"{cls.__name__}.json", "w") as f:
+            if not list_objs:
+                f.write("[]")
+            else:
+                list_to_objs = []
+                for obj in list_objs:
+                    list_to_objs.append(obj.to_dictionary())
+                f.write(str(cls.to_json_string(list_to_objs)))
