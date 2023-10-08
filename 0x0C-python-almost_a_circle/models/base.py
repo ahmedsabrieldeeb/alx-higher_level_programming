@@ -87,6 +87,6 @@ class Base():
         Returns:
             object: an instance of the class
         """
-        dummy_obj = cls(7, 13)
+        dummy_obj = cls(14)
         dummy_obj.update(**dictionary)
         return (dummy_obj)
