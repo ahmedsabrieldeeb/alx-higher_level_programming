@@ -87,6 +87,10 @@ class Base():
         Returns:
             object: an instance of the class
         """
-        dummy_obj = cls(14)
+        if cls.__name__ == "Square":
+            dummy_obj = cls(14)
+        else:
+            dummy_obj = cls(14, 14)
+
         dummy_obj.update(**dictionary)
         return (dummy_obj)
