@@ -1,6 +1,5 @@
 -- This script lists all cities in Califoria state
 -- The cities must be sorted ascendingly based on cities.id
-Use hbtn_0d_usa;
 SELECT id, name
 FROM cities
 WHERE state_id = (
