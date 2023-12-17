@@ -28,8 +28,10 @@ def main():
     cursor = db.cursor()
 
     # write here the QUERY
-    sql_query = "SELECT * FROM cities \
-                 ORDER BY id"
+    sql_query = "SELECT cities.id, cities.name, states.name FROM cities \
+                 JOIN states \
+                 ON states.id = cities.state_id \
+                 ORDER BY cities.id"
 
     cursor.execute(sql_query)
     rows = cursor.fetchall()
