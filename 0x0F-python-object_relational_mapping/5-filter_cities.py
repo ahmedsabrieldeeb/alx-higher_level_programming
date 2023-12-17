@@ -28,7 +28,8 @@ def main():
     cursor = db.cursor()
 
     # write here the QUERY
-    sql_query = "SELECT * FROM cities \
+    sql_query = "SELECT cities.id, cities.name, states.name FROM cities \
+                 JOIN states ON cities.state_id = states.id \
                  WHERE state_id = ( \
                     SELECT id FROM states \
                     WHERE name = %s \
