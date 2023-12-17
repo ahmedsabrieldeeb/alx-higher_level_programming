@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-    Connecting to mysql-server fetching cities data of a specific state
-    from database "hbtn_0e_0_usa"
+    Connecting to mysql-server fetching cities data of
+    a specific state from database "hbtn_0e_0_usa"
 """
 
 import sys
@@ -49,4 +49,3 @@ def main():
 
 if __name__ == "__main__":
     main()
- 
