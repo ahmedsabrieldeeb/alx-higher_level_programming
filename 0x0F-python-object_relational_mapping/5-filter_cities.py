@@ -28,8 +28,7 @@ def main():
     cursor = db.cursor()
 
     # write here the QUERY
-    sql_query = "SELECT cities.id, cities.name, states.name FROM cities \
-                 JOIN states ON cities.state_id = states.id \
+    sql_query = "SELECT cities.name FROM cities \
                  WHERE state_id = ( \
                     SELECT id FROM states \
                     WHERE name = %s \
@@ -40,8 +39,12 @@ def main():
     rows = cursor.fetchall()
 
     # displaying the resuts
-    for row in rows:
-        print(row)
+    if len(rows) != 0:
+        print(rows[0][0], end='')
+        for row in rows[1:]:
+            print(', ', end='')
+            print(row[0], end='')
+    print()
 
     # closing everything before leaving
     cursor.close()
