@@ -40,7 +40,7 @@ def main():
     if first_state:
         print(f"1: {first_state.name}")
     else:
-        print("Nothings")
+        print("Nothing")
 
 
 if __name__ == "__main__":
