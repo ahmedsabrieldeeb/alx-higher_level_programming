@@ -21,7 +21,7 @@ class State(Base):
     """
     __tablename__ = "states"
 
-    id = Column(Integer, 
+    id = Column(Integer,
                 primary_key=True,
                 nullable=False,
                 autoincrement="auto",   # could be omitted
