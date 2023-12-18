@@ -38,8 +38,8 @@ def main():
         order_by(State.id).all()
 
     # printing names of states fetched from our database
-    for i in range(len(states)):
-        print(f"{i+1}: {states[i].name}")
+    for state in states:
+        print(f"{state.id}: {state.name}")
 
 
 if __name__ == "__main__":
